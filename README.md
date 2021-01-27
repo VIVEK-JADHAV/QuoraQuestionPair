@@ -9,3 +9,6 @@ The dataset provided by Kaggle has two files, train and test, although I am usin
 ### Performance Metric
 The performance metric used is the ROC-AUC score. It is the area under the curve between True Positive rate and False Positive rate for different thresholds. It indicates  the probability with which a given question pair will be correctly classified.
 
+### Exploratory Data Analysis
+* #### Analysing Target Variable
+
