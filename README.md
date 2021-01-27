@@ -21,7 +21,7 @@ Created new features using question 1 and question2 like frequency of questions,
 ![WordShare](https://github.com/VIVEK-JADHAV/QuoraQuestionPair/blob/main/Images/Wordshare.JPG)
 
 ### Data Pre-processing
-* The first step is to clean the data. It involved removing stopwords,punctuations,html tage, words of length less than 3, expand short forms(they 'll to they will) and convert each word to lower case
+* The first step is to clean the data. It involved removing stopwords,punctuations,html tags, words of length less than 3, expand short forms(they 'll to they will) and convert each word to lower case
 * The data was split into train,validation and test such that distribution of target variable is maintained (stratified split).
 * Using Tensorflow's tokenizer, the questions 1 and two were converted to tokens, with padding to support batch operation
 * Glove vectors( which will be used in embedding layer in the model) is loaded, which gives 100 dimensional vector for each token
