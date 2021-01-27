@@ -12,9 +12,11 @@ The performance metric used is the ROC-AUC score. It is the area under the curve
 ### Exploratory Data Analysis
 * #### Analysing Target Variable
 The target variable, is_duplicate, is a binary variable with 0 and 1 as values. The percentage of similar questions were 36.92 and dissimilar questions were 63.07. There is significant representation of both the classes, hence, dataset is not imbalanced.
+![TargetVariable](https://github.com/VIVEK-JADHAV/QuoraQuestionPair/blob/main/Images/Target.JPG)
 
 * #### Analysing Input Variable
 Created new features using question 1 and question2 like frequency of questions, count of words in questions, common words between the questions. Among them, the normalised word share was interesting. It's distribution showed that similar questions have higher word share than dissimilar questions, which logically makes sense.
+![WordShare](https://github.com/VIVEK-JADHAV/QuoraQuestionPair/blob/main/Images/Wordshare.JPG)
 
 ### Data Pre-processing
 * The first step is to clean the data. It involved removing stopwords,punctuations,html tage, words of length less than 3, expand short forms(they 'll to they will) and convert each word to lower case
@@ -24,6 +26,7 @@ Created new features using question 1 and question2 like frequency of questions,
 
 ### Model
 I have trained a Siamese network to differentiate between similar and dissimilar questions. In a nutshell, the siamese network finds a pattern for each underlying classes( which is unknown). If the pattern for both the questions match, they will be classified similar else, dissimilar.
+![Model](https://github.com/VIVEK-JADHAV/QuoraQuestionPair/blob/main/Images/Model.JPG)
 The model has the following layers:
 * Input layer: 2 input layers with sequence of question1 and question2 tokens.
 * Embedding layer: Converts tokens to 100 dimensional vector.
@@ -32,6 +35,8 @@ The model has the following layers:
 * Output layer: Single neuron with sigmoid activation.
 
 The model was trained with Binary Cross Entropy loss and Adam optimiser.
+
+![ROC](https://github.com/VIVEK-JADHAV/QuoraQuestionPair/blob/main/Images/ROC.JPG)
 
 The threshold value for classifying was selected such that product of True Positive Rate and 1-False Positive Rate is maximum. It turned out to be 0.38. If the model retured a value greater than 0.38, it is classified as similar.
 
