@@ -30,8 +30,11 @@ The model has the following layers:
 * Bi-Directional LSTM: This is a common layer for both the questions. After it is trained,it generates unique pattern for each underlying class and returns output for both question1 and question2.
 * Distance layer: This layer outputs L1 norm between lstm outputs of question1 and question2. It differentiates between two classes. If the two questions are similar, the distance vector would have smaller values and vice-versa.
 * Output layer: Single neuron with sigmoid activation.
+
 The model was trained with Binary Cross Entropy loss and Adam optimiser.
+
 The threshold value for classifying was selected such that product of True Positive Rate and 1-False Positive Rate is maximum. It turned out to be 0.38. If the model retured a value greater than 0.38, it is classified as similar.
+
 On the test dataset, the AUC score was 0.8 with high precision and recall.
 
 
